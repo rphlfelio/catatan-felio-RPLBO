@@ -1,0 +1,48 @@
+🧩 Composition (Komposisi)
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Buku {
+    private String judul;
+    private String penulis;
+
+    public Buku(String judul, String penulis) {
+        this.judul = judul;
+        this.penulis = penulis;
+    }
+
+    public void info() {
+        System.out.println(judul + " oleh " + penulis);
+    }
+}
+
+public class Perpustakaan {
+    private List<Buku> daftarBuku = new ArrayList<>();
+
+    public void tambahBuku(Buku buku) {
+        daftarBuku.add(buku);
+    }
+
+    public void tampilkanSemua() {
+        for (Buku b : daftarBuku) {
+            b.info();
+        }
+    }
+}
+
+🚀 Cara Pakai
+
+public class Main {
+    public static void main(String[] args) {
+        Perpustakaan p = new Perpustakaan();
+
+        Buku b1 = new Buku("Laskar Pelangi", "Andrea Hirata");
+        Buku b2 = new Buku("Bumi", "Tere Liye");
+
+        p.tambahBuku(b1);
+        p.tambahBuku(b2);
+
+        p.tampilkanSemua();
+    }
+}

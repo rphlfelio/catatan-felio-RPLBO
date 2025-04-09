@@ -1,0 +1,40 @@
+🔷 1. Abstract Class
+
+public abstract class Kendaraan {
+    protected String merk;
+
+    public Kendaraan(String merk) {
+        this.merk = merk;
+    }
+
+    public abstract void nyalakan();  // method abstrak (tanpa isi)
+
+    public void info() {              // method biasa (ada isi)
+        System.out.println("Merk: " + merk);
+    }
+}
+
+public class Mobil extends Kendaraan {
+    public Mobil(String merk) {
+        super(merk);
+    }
+
+    @Override
+    public void nyalakan() {
+        System.out.println("Menyalakan mobil " + merk);
+    }
+}
+
+
+🟩 2. Interface
+
+public interface BisaDikendarai {
+    void jalan();  // otomatis public abstract
+}
+
+public class Sepeda implements BisaDikendarai {
+    @Override
+    public void jalan() {
+        System.out.println("Sepeda mengayuh di jalan...");
+    }
+}
